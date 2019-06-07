@@ -24,7 +24,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idCilente;
+	private Integer idCliente;
 	private String nome;
 	private String CpfouCnpj;
 	private Integer tipo;
@@ -44,7 +44,7 @@ public class Cliente implements Serializable {
 
 	public Cliente(Integer idCilente, String nome, String cpfouCnpj, String email, TipoCliente tipo) {
 		super();
-		this.idCilente = idCilente;
+		this.idCliente = idCilente;
 		this.nome = nome;
 		this.CpfouCnpj = cpfouCnpj;
 		this.email = email;
@@ -52,11 +52,11 @@ public class Cliente implements Serializable {
 	}
 
 	public Integer getIdCilente() {
-		return idCilente;
+		return idCliente;
 	}
 
-	public void setIdCilente(Integer idCilente) {
-		this.idCilente = idCilente;
+	public void setIdCliente(Integer idCilente) {
+		this.idCliente = idCilente;
 	}
 
 	public String getNome() {
@@ -110,7 +110,7 @@ public class Cliente implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((idCilente == null) ? 0 : idCilente.hashCode());
+		result = prime * result + ((idCliente == null) ? 0 : idCliente.hashCode());
 		return result;
 	}
 
@@ -123,10 +123,10 @@ public class Cliente implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
-		if (idCilente == null) {
-			if (other.idCilente != null)
+		if (idCliente == null) {
+			if (other.idCliente != null)
 				return false;
-		} else if (!idCilente.equals(other.idCilente))
+		} else if (!idCliente.equals(other.idCliente))
 			return false;
 		return true;
 	}
