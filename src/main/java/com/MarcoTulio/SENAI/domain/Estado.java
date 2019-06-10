@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +12,7 @@ import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
 public class Estado implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -27,19 +29,22 @@ public class Estado implements Serializable {
 		
 	}
 
-	public Estado(Integer idCilente, String nome, List<Cidade> cidades) {
-		super();
-		this.id = idCilente;
-		this.nome = nome;
+	
 		
+	public Estado(Integer id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
 	}
 
-	public Integer getIdCilente() {
+
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setIdCilente(Integer idCilente) {
-		this.id = idCilente;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -50,13 +55,7 @@ public class Estado implements Serializable {
 		this.nome = nome;
 	}
 
-	public List<Cidade> getCidades() {
-		return cidades;
-	}
 
-	public void setCidades(List<Cidade> cidades) {
-		this.cidades = cidades;
-	}
 
 	@Override
 	public int hashCode() {
@@ -65,6 +64,8 @@ public class Estado implements Serializable {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -82,5 +83,8 @@ public class Estado implements Serializable {
 			return false;
 		return true;
 	}
+
+
+	
 	
 }
