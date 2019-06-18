@@ -43,5 +43,10 @@ public class ClienteService {
 		buscar(obj.getIdCilente());
 		return repo.save(obj);
 	}
+	
+	public void Delete (Integer id) {
+		buscar(id);
+		repo.deleteById(id);
+	}
 		
 }
